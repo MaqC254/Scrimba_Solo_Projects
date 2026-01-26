@@ -3,6 +3,9 @@ import { menuArray } from "./data.js"
 const menuItemsDiv = document.getElementById('menu-items')
 const orderedItemsDiv = document.getElementById('ordered-items')
 const totalPriceElement = document.getElementById('total-price')
+const form = document.getElementById('card-details-form')
+const modal = document.getElementById("card-details-modal");
+const thanks = document.getElementById('thanks')
 
 let orderedItemsHtml = ''
 let totalPrice = 0
@@ -16,23 +19,40 @@ document.addEventListener('click',e => {
         removeOrderedItem(e.target.closest('.order-item'))
     }
 
+
 })
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  console.log(formData);
+  modal.style.display = "none";
+  renderThanksMessage()
+});
+
+function renderThanksMessage(){
+    thanks.innerHTML = `
+    <div id="rendered-thanks-message">
+    <p>Thanks, James. Your order is on it's way.</p>
+    </div>
+    `
+}
 
 function removeOrderedItem(item){
     let itemName = item.id
     let itemToRemoveIndex = orderedItemsArr.findIndex(item => item.name === itemName)
     orderedItemsArr.splice(itemToRemoveIndex, 1);
-    render()
+    renderOrderedItems()
 }
 
 function addOrderedItems(e){
     const name = e.target.closest('.menu-item').dataset.item
     const addedMenuItem = menuArray.find(item => item.name === name)
     orderedItemsArr.push(addedMenuItem)
-    render()
+    renderOrderedItems()
 }
 
-function render(){
+function renderOrderedItems(){
     totalPrice = 0
     orderedItemsArr.forEach(item => {
         orderedItemsHtml += `
@@ -76,4 +96,21 @@ function renderMenuItems(){
 
 
 menuItemsDiv.innerHTML = renderMenuItems()
+
+
+
+
+var btn = document.getElementById("complete-order-btn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
