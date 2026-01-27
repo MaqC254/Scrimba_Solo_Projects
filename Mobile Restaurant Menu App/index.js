@@ -17,6 +17,10 @@ document.addEventListener('click',e => {
         addOrderedItems(e)
     }else if(e.target.id === "remove-btn"){
         removeOrderedItem(e.target.closest('.order-item'))
+    }else if(e.target.id === "complete-order-btn"){
+        modal.style.display = "block";
+    }else if(e.target == modal){
+        modal.style.display = "none";
     }
 
 
@@ -96,21 +100,3 @@ function renderMenuItems(){
 
 
 menuItemsDiv.innerHTML = renderMenuItems()
-
-
-
-
-var btn = document.getElementById("complete-order-btn");
-
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-

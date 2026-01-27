@@ -99,16 +99,15 @@ body {
     justify-content: space-between;
 }
 
-#complete-order{
+#complete-order, #rendered-thanks-message{
     text-align: center;
 }
 
 #rendered-thanks-message{
-    text-align: center;
     margin-top: 100px;
     color: green;
     background-color: lightblue;
-    width: 50%; /* OR max-width */
+    width: 50%;
     margin: 0 auto;
     padding: 15px;
     font-size: 25px;
@@ -144,13 +143,11 @@ body {
   font-weight: bold;
 }
 
-input{
-    margin-bottom: 10px;
+input, #submit{
     display: block;
     width: 100%;
 }
 
-#submit{
-    display: block;
-    width: 100%;
+input{
+    margin-bottom: 10px;
 }
