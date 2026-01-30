@@ -1,0 +1,119 @@
+html, 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.recent-posts-header{
+    display: block;
+    text-align: center;
+}
+
+.my-info{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  text-align: left;
+}
+
+.commitment{
+    margin-top: 45px;
+}
+
+.intro-text, h2{
+    font-size: 40px;
+}
+
+.profile-img{
+    border-radius: 50%;
+    align-self: center;
+    width: 150px;
+    height: 150px;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page-header-text{
+    font-size: 12px;
+}
+
+.blog-item{
+    margin-bottom: 35px;
+}
+
+.flex-left{
+    display: flex;
+}
+
+.flex-right{
+    margin-right: 20px;
+}
+
+a.nav-item{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.hidden-blog-items{
+    display: none;
+}
+
+.section-1{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 5px 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.bg{
+    background-image: url(../images/coding.jpeg);
+    background-color: black;
+    color: white;
+}
+
+.blog-section{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.blog-image{
+    border-radius: 2%;
+    align-self: center;
+    width: 90vw;
+}
+
+.fa-book{
+    font-size: 25px;
+}
+
+.view-more{
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 600;
+    
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+    color: whitesmoke;
+    line-height: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px){
+    body{
+        font-size: medium;
+        /* placeholder */
+    }
+}
