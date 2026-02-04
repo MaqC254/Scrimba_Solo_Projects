@@ -4,6 +4,15 @@ body {
     padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 .recent-posts-header{
     display: block;
     text-align: center;
@@ -16,18 +25,18 @@ body {
 }
 
 .commitment{
-    margin-top: 45px;
+    margin-top: 2.813em;
 }
 
 .intro-text, h2{
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 .profile-img{
     border-radius: 50%;
     align-self: center;
-    width: 150px;
-    height: 150px;
+    width: 9.375em;
+    height: 9.375em;
 }
 
 
@@ -37,11 +46,12 @@ body {
     align-items: center;
 }
 .page-header-text{
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .blog-item{
-    margin-bottom: 35px;
+    margin-bottom: 2.188em;
+    flex: 0 0 33.3333%;
 }
 
 .flex-left{
@@ -49,48 +59,50 @@ body {
 }
 
 .flex-right{
-    margin-right: 20px;
+    margin-right: 1.25em;
 }
 
 a.nav-item{
-    font-size: 12px;
+    font-size: 0.75rem;
     text-decoration: none;
     color: black;
     font-weight: 600;
-    margin-left: 15px;
-}
-
-.hidden-blog-items{
-    display: none;
+    margin-left: 1.25em;
 }
 
 .section-1{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 30px 20px 5px 20px;
-    margin-bottom: 30px;
+    padding: 1.875em 1.25em 0.3125em 1.25em;
+    margin-bottom: 1.875em;
     text-align: left;
 }
 
 .bg{
     background-image: url(../images/coding.jpeg);
     background-color: black;
+    background-size: cover;
     color: white;
 }
 
 .blog-section{
+    display: flex;
+    flex-direction: column;
     margin-left: 5vw;
-    margin-right: 5vw;
+    margin-right: 3vw;
 }
 
 .blog-image{
     border-radius: 2%;
     align-self: center;
-    width: 90vw;
+    width: 90%;
+    height: 40%;
+    object-fit: cover;
 }
 
 .fa-book{
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 .view-more{
@@ -105,15 +117,24 @@ footer{
     background-color: black;
     text-align: center;
     color: whitesmoke;
-    line-height: 5px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 15px;
+    line-height: 0.3125em;
+    padding-bottom: 0.625em;
+    padding-top: 0.625em;
+    margin-top: 0.9375em;
+    width: 100%;
 }
 
+.hidden{
+    display: none;
+}
+
+
 @media (min-width: 768px){
-    body{
-        font-size: medium;
-        /* placeholder */
+    .blog-section{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .header, .section-1{
+        width: 100%;
     }
 }
