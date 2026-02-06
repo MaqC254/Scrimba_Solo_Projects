@@ -17,7 +17,7 @@ form.addEventListener('submit',function(e){
         html += `
         <div id="color-item">
             <img src="${color.image.bare}" alt="${color.name.value}">
-            <p>${color.hex.value}</p>
+            <p id="hex" onclick="copyContent()">${color.hex.value}</p>
         </div>
         `
     });
@@ -25,3 +25,18 @@ form.addEventListener('submit',function(e){
     colorContainersDiv.innerHTML = html
     })
 })
+
+function copyContent() {
+  const hex = document.getElementById('hex');
+  const content = hex.textContent;
+
+  navigator.clipboard.writeText(content).then(() => {
+    const confirmation = document.getElementById('copy-confirmation');
+    confirmation.textContent = 'Copied!';
+    setTimeout(() => {
+      confirmation.textContent = '';
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy text: ', err);
+  });
+}

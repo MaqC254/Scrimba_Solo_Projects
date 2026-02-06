@@ -2,4 +2,62 @@ html, body{
     margin: 0;
     padding: 0;
 }
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #11151a;
+    font-family: "Lexend Deca", sans-serif;
+}
 
+#copy-confirmation{
+    color: #D5D4D8;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 350px;
+    padding: 15px 15px 15px 15px;
+}
+
+input{
+    height: 40px;
+    width: 45pxpx;
+}
+
+#hex{
+    color: #D5D4D8;
+    text-align: center;
+}
+
+select{
+    background-color:#3D4B60;
+    color: #D5D4D8;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+button{
+    background-color: #3D4B60;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+form, #color-containers{
+    background-color: #1F2937;
+}
+
+img{
+    height: 300px;
+    width: 76px;
+}
+
+#color-containers{
+    display: flex;
+}

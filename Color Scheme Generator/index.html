@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <script src="index.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form id="header-form">
-        <input type="color" id="seed" name="seed" aria-label="color-picker">
-        <select id="mode" name="mode">
-            <option value="monochrome" selected>Monochrome</option>
-            <option value="monochrome-dark">Monochrome-dark</option>
-            <option value="monochrome-light">Monochrome-light</option>
-            <option value="analogic">Analogic</option>
-            <option value="complement">Complement</option>
-            <option value="analogic-complement">Analogic-complement</option>
-            <option value="triad">Triad</option>
-            <option value="quad">Quad</option>
-        </select>
-        <button id="submit">Get color scheme</button>
-    </form>
-    <div id="color-containers">
-    </div>
+    <main>
+        <p id="copy-confirmation"></p>
+        <form id="header-form">
+            <input type="color" id="seed" name="seed" aria-label="color-picker">
+            <select id="mode" name="mode">
+                <option value="monochrome" selected>Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="monochrome-light">Monochrome-light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-complement</option>
+                <option value="triad">Triad</option>
+                <option value="quad">Quad</option>
+            </select>
+            <button id="submit">Get color scheme</button>
+        </form>
+        <div id="color-containers">
+        </div>
+    </main>
 </body>
 </html>
