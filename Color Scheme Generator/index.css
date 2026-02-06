@@ -2,13 +2,16 @@ html, body{
     margin: 0;
     padding: 0;
 }
-main{
+
+main, form, #color-containers{
     display: flex;
+}
+
+main{
     flex-direction: column;
     justify-content: center; 
     align-items: center;
     height: 100vh;
-    width: 100vw;
     background-color: #11151a;
     font-family: "Lexend Deca", sans-serif;
 }
@@ -18,11 +21,10 @@ main{
 }
 
 form{
-    display: flex;
     justify-content: space-between;
     text-align: center;
     width: 350px;
-    padding: 15px 15px 15px 15px;
+    padding: 15px;
 }
 
 input{
@@ -30,9 +32,10 @@ input{
     width: 45pxpx;
 }
 
-#hex{
+.hex{
     color: #D5D4D8;
     text-align: center;
+    cursor: pointer;
 }
 
 select{
@@ -59,5 +62,6 @@ img{
 }
 
 #color-containers{
-    display: flex;
+    width: 380px;
+    height: 365px;
 }

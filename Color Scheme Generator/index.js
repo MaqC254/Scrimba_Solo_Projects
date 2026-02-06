@@ -5,33 +5,31 @@ form.addEventListener('submit',function(e){
     e.preventDefault()
     const seed = document.getElementById("seed").value.slice(1)
     const mode = document.getElementById("mode").value
-    console.log(seed,mode)
+    fetchColorScheme(seed,mode)
+})
 
-    fetch(`https://www.thecolorapi.com/scheme?hex=${seed}&mode=${mode}`)
+async function fetchColorScheme(seed, mode) {
+  fetch(`https://www.thecolorapi.com/scheme?hex=${seed}&mode=${mode}`)
     .then(response => response.json())
     .then(data => {
         let html = ''
         const colors = data.colors
-        console.log(data.colors)
         colors.forEach(color => {
         html += `
         <div id="color-item">
             <img src="${color.image.bare}" alt="${color.name.value}">
-            <p id="hex" onclick="copyContent()">${color.hex.value}</p>
+            <p class="hex" data-copy="${color.hex.value}" onclick="copyData(this)">${color.hex.value}</p>
         </div>
         `
     });
-    //console.log(html)
     colorContainersDiv.innerHTML = html
     })
-})
+}
 
-function copyContent() {
-  const hex = document.getElementById('hex');
-  const content = hex.textContent;
-
-  navigator.clipboard.writeText(content).then(() => {
-    const confirmation = document.getElementById('copy-confirmation');
+function copyData(element) {
+  const textToCopy = element.dataset.copy;
+  navigator.clipboard.writeText(textToCopy).then(() => {
+   const confirmation = document.getElementById('copy-confirmation');
     confirmation.textContent = 'Copied!';
     setTimeout(() => {
       confirmation.textContent = '';
